@@ -1,0 +1,32 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="tb_dcdevs" resource="default" engine="innodb" comment="Digital College Dev">
+        <column xsi:type="smallint" name="id" padding="6" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="author_name" nullable="false" length="25" comment="Nome"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="25" comment="Email"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Descricao"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+
+    <table name="tb_products" resource="default" engine="innodb" comment="Projeto Produtos">
+        <column xsi:type="smallint" name="id" padding="6" unsigned="false" nullable="false" identity="true"
+                comment="ID"/>
+        <column xsi:type="varchar" name="product_name" nullable="false" length="100" comment="Nome"/>
+        <column xsi:type="varchar" name="sku" nullable="false" length="25" comment="SKU"/>
+        <column xsi:type="varchar" name="type" nullable="false" length="25" comment="Tipo"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Descrição"/>
+        <column xsi:type="varchar" name="price" nullable="false" length="25" comment="Preco"/>
+        <column xsi:type="int" name="quantity" nullable="false" comment="Quantidade"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false"  default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false"  default="CURRENT_TIMESTAMP" comment="Update At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
